@@ -1,18 +1,18 @@
 <?php 
 
-require_once 'EhrlichAndreas/AbstractCms/Exception.php';
+//require_once 'EhrlichAndreas/AbstractCms/Exception.php';
 
-require_once 'EhrlichAndreas/AbstractCms/Abstract/Adapter/Abstract.php';
+//require_once 'EhrlichAndreas/AbstractCms/Abstract/Adapter/Abstract.php';
 
-require_once 'EhrlichAndreas/Db/Expr.php';
+//require_once 'EhrlichAndreas/Db/Expr.php';
 
-require_once 'EhrlichAndreas/Db/Delete.php';
+//require_once 'EhrlichAndreas/Db/Delete.php';
 
-require_once 'EhrlichAndreas/Db/Insert.php';
+//require_once 'EhrlichAndreas/Db/Insert.php';
 
-require_once 'EhrlichAndreas/Db/Select.php';
+//require_once 'EhrlichAndreas/Db/Select.php';
 
-require_once 'EhrlichAndreas/Db/Update.php';
+//require_once 'EhrlichAndreas/Db/Update.php';
 
 /**
  *

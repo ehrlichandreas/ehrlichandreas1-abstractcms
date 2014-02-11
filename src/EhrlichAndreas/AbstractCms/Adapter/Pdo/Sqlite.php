@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'EhrlichAndreas/AbstractCms/Abstract/Adapter/Pdo/Mysql.php';
+//require_once 'EhrlichAndreas/AbstractCms/Abstract/Adapter/Pdo/Mysql.php';
 
 /**
  *

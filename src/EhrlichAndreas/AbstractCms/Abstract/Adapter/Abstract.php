@@ -1,12 +1,12 @@
 <?php 
 
-require_once 'EhrlichAndreas/AbstractCms/Exception.php';
+//require_once 'EhrlichAndreas/AbstractCms/Exception.php';
 
-require_once 'EhrlichAndreas/Db/Adapter/Abstract.php';
+//require_once 'EhrlichAndreas/Db/Adapter/Abstract.php';
 
-require_once 'EhrlichAndreas/Util/Array.php';
+//require_once 'EhrlichAndreas/Util/Array.php';
 
-require_once 'EhrlichAndreas/Util/Object.php';
+//require_once 'EhrlichAndreas/Util/Object.php';
 
 /**
  *

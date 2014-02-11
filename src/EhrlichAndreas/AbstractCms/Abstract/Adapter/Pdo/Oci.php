@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'EhrlichAndreas/AbstractCms/Abstract/Adapter/Pdo/Abstract.php';
+//require_once 'EhrlichAndreas/AbstractCms/Abstract/Adapter/Pdo/Abstract.php';
 
 /**
  *
