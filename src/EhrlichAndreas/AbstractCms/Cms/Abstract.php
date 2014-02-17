@@ -277,7 +277,7 @@ class EhrlichAndreas_AbstractCms_Cms_Abstract
         {
             if (EhrlichAndreas_Util_Object::isInstanceOf($options, 'Zend\Db\Adapter\Adapter'))
             {
-                $options = new \EhrlichAndreas_Db_ZF2Bridge_Adapter($options);
+                $options = new EhrlichAndreas_Db_ZF2Bridge_Adapter($options);
             }
             
             if (EhrlichAndreas_Util_Object::isInstanceOf($options, 'EhrlichAndreas_Db_Adapter_Abstract') || EhrlichAndreas_Util_Object::isInstanceOf($options, 'Zend_Db_Adapter_Abstract'))
