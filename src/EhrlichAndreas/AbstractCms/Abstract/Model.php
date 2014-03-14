@@ -971,4 +971,3 @@ class EhrlichAndreas_AbstractCms_Abstract_Model
     }
 }
 
-?>

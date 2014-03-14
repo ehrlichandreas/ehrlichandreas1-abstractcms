@@ -331,4 +331,3 @@ class EhrlichAndreas_AbstractCms_Module extends EhrlichAndreas_AbstractCms_Cms_A
 	}
 }
 
-?>

@@ -10,4 +10,3 @@ class EhrlichAndreas_AbstractCms_Adapter_Pdo_Oci extends EhrlichAndreas_Abstract
 {
 }
 
-?>

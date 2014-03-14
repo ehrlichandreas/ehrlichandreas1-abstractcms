@@ -10,4 +10,3 @@ class EhrlichAndreas_AbstractCms_Adapter_Pdo_Sqlite extends EhrlichAndreas_Abstr
 {
 }
 
-?>

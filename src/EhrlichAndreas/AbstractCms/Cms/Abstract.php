@@ -379,4 +379,3 @@ class EhrlichAndreas_AbstractCms_Cms_Abstract
     }
 }
 
-?>

@@ -1070,4 +1070,3 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
     }
 }
 
-?>

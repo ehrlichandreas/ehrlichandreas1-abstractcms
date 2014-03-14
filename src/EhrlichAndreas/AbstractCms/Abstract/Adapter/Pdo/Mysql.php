@@ -10,4 +10,3 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Pdo_Mysql extends EhrlichAndre
 {
 }
 
-?>

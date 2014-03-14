@@ -11,4 +11,3 @@ class EhrlichAndreas_AbstractCms_Exception extends EhrlichAndreas_Util_Exception
 {
 }
 
-?>
