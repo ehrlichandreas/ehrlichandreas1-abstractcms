@@ -280,6 +280,11 @@ class EhrlichAndreas_AbstractCms_Cms_Abstract
                 $options = new EhrlichAndreas_Db_ZF2Bridge_Adapter($options);
             }
             
+            if (EhrlichAndreas_Util_Object::isInstanceOf($options, 'Doctrine\Bundle\DoctrineBundle\Registry'))
+            {
+                $options = new EhrlichAndreas_Db_DoctrineBridge_Adapter($options);
+            }
+            
             if (EhrlichAndreas_Util_Object::isInstanceOf($options, 'EhrlichAndreas_Db_Adapter_Abstract') || EhrlichAndreas_Util_Object::isInstanceOf($options, 'Zend_Db_Adapter_Abstract'))
             {
                 $adapter = $options;

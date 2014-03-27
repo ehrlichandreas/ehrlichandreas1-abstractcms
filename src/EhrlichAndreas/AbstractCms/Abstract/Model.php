@@ -47,9 +47,19 @@ class EhrlichAndreas_AbstractCms_Abstract_Model
 			return $adapter;
 		}
 		
+		if (EhrlichAndreas_Util_Object::isInstanceOf($adapter, 'EhrlichAndreas_Db_DoctrineBridge_Adapter'))
+		{
+			return $adapter;
+		}
+		
 		if (EhrlichAndreas_Util_Object::isInstanceOf($adapter, 'Zend\Db\Adapter\Adapter'))
 		{
 			return new EhrlichAndreas_Db_ZF2Bridge_Adapter($adapter);
+		}
+		
+		if (EhrlichAndreas_Util_Object::isInstanceOf($adapter, 'Doctrine\Bundle\DoctrineBundle\Registry'))
+		{
+			return new EhrlichAndreas_Db_DoctrineBridge_Adapter($adapter);
 		}
 		
         return $adapter->getConnection();
