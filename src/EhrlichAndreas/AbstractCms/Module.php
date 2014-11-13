@@ -320,14 +320,5 @@ class EhrlichAndreas_AbstractCms_Module extends EhrlichAndreas_AbstractCms_Cms_A
 		
 		return $list;
     }
-	
-	/**
-	 * 
-	 * @return GoldAg_Db_Abstract
-	 */
-	public function install ()
-	{
-		return $this;
-	}
 }
 

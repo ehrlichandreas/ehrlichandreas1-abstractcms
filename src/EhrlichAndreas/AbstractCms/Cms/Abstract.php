@@ -336,12 +336,14 @@ class EhrlichAndreas_AbstractCms_Cms_Abstract
     }
 
     /**
-     *
-     * @return void
+     * 
+     * @return EhrlichAndreas_AbstractCms_Cms_Abstract
      */
     public function install ()
     {
         $this->adapter->install();
+        
+        return $this;
     }
 
     /**
