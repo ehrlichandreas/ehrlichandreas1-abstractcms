@@ -83,7 +83,7 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
         else
         {
             // $this->throwException("Impossible to open
-            // DB",$options['exceptionClass']);
+            // DB",$options['exceptionclass']);
         }
 
         if (empty($options['db']))
@@ -873,7 +873,7 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
 
                 if (! EhrlichAndreas_Util_Object::isInstanceOf($this->db, 'EhrlichAndreas_Db_Adapter_Abstract') && ! EhrlichAndreas_Util_Object::isInstanceOf($this->db, 'Zend_Db_Adapter_Abstract'))
                 {
-                    $this->throwException("Impossible to open " . $this->options['db'] . " DB", $this->options['exceptionClass']);
+                    $this->throwException("Impossible to open " . $this->options['db'] . " DB", $this->options['exceptionclass']);
                 }
 
                 return $this->db;
@@ -886,7 +886,7 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
 
             if (! EhrlichAndreas_Util_Object::isInstanceOf($adapter, 'EhrlichAndreas_Db_Adapter_Abstract') && ! EhrlichAndreas_Util_Object::isInstanceOf($this->db, 'Zend_Db_Adapter_Abstract'))
             {
-                $this->throwException("Impossible to open " . $adapter . " DB", $this->options['exceptionClass']);
+                $this->throwException("Impossible to open " . $adapter . " DB", $this->options['exceptionclass']);
             }
 
             $dbconfig = $this->options['dbconfig'];
@@ -937,7 +937,7 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
         }
         else
         {
-            $this->throwException("Impossible to open DB", $this->options['exceptionClass']);
+            $this->throwException("Impossible to open DB", $this->options['exceptionclass']);
         }
     }
 

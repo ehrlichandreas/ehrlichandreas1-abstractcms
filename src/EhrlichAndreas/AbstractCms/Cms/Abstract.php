@@ -92,7 +92,7 @@ class EhrlichAndreas_AbstractCms_Cms_Abstract
         else
         {
             // $this->throwException("Impossible to open
-            // DB",$options['exceptionClass']);
+            // DB",$options['exceptionclass']);
         }
 
         if (empty($options['db']))
