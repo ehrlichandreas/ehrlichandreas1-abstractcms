@@ -254,6 +254,33 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
     /**
      *
      * @param string $key
+     * @param string $value
+     */
+    public function setTableSuffix ($key = null, $value = null)
+    {
+        $key2 = 'dbtablesuffix';
+
+        if (null === $key && null === $value)
+        {
+            unset($this->options[$key2]);
+        }
+        elseif (null === $key)
+        {
+            $this->options[$key2] = $value;
+        }
+        elseif (null === $value)
+        {
+            unset($this->options[$key2][$key]);
+        }
+        else
+        {
+            $this->options[$key2][$key] = $value;
+        }
+    }
+
+    /**
+     *
+     * @param string $key
      * @return string dbtablesuffixlength
      */
     public function getTableSuffixLength ($key = null)
