@@ -113,30 +113,86 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
 
     /**
      *
+     * @param string $keyConfig
+     * @param string $key
+     * @return string dbtableprefix
+     */
+    protected function getTableConfig ($keyConfig, $key = null)
+    {
+        if (is_array($this->options) && array_key_exists($keyConfig, $this->options))
+        {
+            if (null === $key)
+            {
+                return $this->options[$keyConfig];
+            }
+            elseif (is_array($this->options[$keyConfig]) && array_key_exists($key, $this->options[$keyConfig]))
+            {
+                return $this->options[$keyConfig][$key];
+            }
+            elseif (! is_array($this->options[$keyConfig]))
+            {
+                return $this->options[$keyConfig];
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     *
+     * @param string $keyConfig
+     * @param string $key
+     * @param string $value
+     */
+    protected function setTableConfig ($keyConfig, $key = null, $value = null)
+    {
+        if (null === $key && null === $value)
+        {
+            unset($this->options[$keyConfig]);
+        }
+        elseif (null === $key)
+        {
+            $this->options[$keyConfig] = $value;
+        }
+        elseif (null === $value)
+        {
+            unset($this->options[$keyConfig][$key]);
+        }
+        else
+        {
+            $this->options[$keyConfig][$key] = $value;
+        }
+    }
+
+    /**
+     *
      * @param string $key
      * @return string dbtableprefix
      */
     public function getTablePrefix ($key = null)
     {
-        $key2 = 'dbtableprefix';
+        $keyConfig = 'dbtableprefix';
 
-        if (is_array($this->options) && array_key_exists($key2, $this->options))
+        $value = $this->getTableConfig ($keyConfig, $key);
+        
+        if ($value === false)
         {
-            if (null === $key)
-            {
-                return $this->options[$key2];
-            }
-            elseif (is_array($this->options[$key2]) && array_key_exists($key, $this->options[$key2]))
-            {
-                return $this->options[$key2][$key];
-            }
-            elseif (! is_array($this->options[$key2]))
-            {
-                return $this->options[$key2];
-            }
+            return '';
         }
+        
+        return $value;
+    }
 
-        return '';
+    /**
+     *
+     * @param string $key
+     * @param string $value
+     */
+    public function setTablePrefix ($key = null, $value = null)
+    {
+        $keyConfig = 'dbtableprefix';
+
+        $this->setTableConfig ($keyConfig, $key, $value);
     }
 
     /**
@@ -146,25 +202,28 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function getTablePrefixLength ($key = null)
     {
-        $key2 = 'dbtableprefixlength';
+        $keyConfig = 'dbtableprefixlength';
 
-        if (is_array($this->options) && array_key_exists($key2, $this->options))
+        $value = $this->getTableConfig ($keyConfig, $key);
+        
+        if ($value === false)
         {
-            if (null === $key)
-            {
-                return $this->options[$key2];
-            }
-            elseif (is_array($this->options[$key2]) && array_key_exists($key, $this->options[$key2]))
-            {
-                return $this->options[$key2][$key];
-            }
-            elseif (! is_array($this->options[$key2]))
-            {
-                return $this->options[$key2];
-            }
+            return 0;
         }
+        
+        return $value;
+    }
 
-        return 0;
+    /**
+     *
+     * @param string $key
+     * @param string $value
+     */
+    public function setTablePrefixLength ($key = null, $value = null)
+    {
+        $keyConfig = 'dbtableprefix';
+
+        $this->setTableConfig ($keyConfig, $key, $value);
     }
 
     /**
@@ -230,25 +289,16 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function getTableSuffix ($key = null)
     {
-        $key2 = 'dbtablesuffix';
+        $keyConfig = 'dbtablesuffix';
 
-        if (is_array($this->options) && array_key_exists($key2, $this->options))
+        $value = $this->getTableConfig ($keyConfig, $key);
+        
+        if ($value === false)
         {
-            if (null === $key)
-            {
-                return $this->options[$key2];
-            }
-            elseif (is_array($this->options[$key2]) && array_key_exists($key, $this->options[$key2]))
-            {
-                return $this->options[$key2][$key];
-            }
-            elseif (! is_array($this->options[$key2]))
-            {
-                return $this->options[$key2];
-            }
+            return '';
         }
-
-        return '';
+        
+        return $value;
     }
 
     /**
@@ -258,24 +308,9 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function setTableSuffix ($key = null, $value = null)
     {
-        $key2 = 'dbtablesuffix';
+        $keyConfig = 'dbtablesuffix';
 
-        if (null === $key && null === $value)
-        {
-            unset($this->options[$key2]);
-        }
-        elseif (null === $key)
-        {
-            $this->options[$key2] = $value;
-        }
-        elseif (null === $value)
-        {
-            unset($this->options[$key2][$key]);
-        }
-        else
-        {
-            $this->options[$key2][$key] = $value;
-        }
+        $this->setTableConfig ($keyConfig, $key, $value);
     }
 
     /**
