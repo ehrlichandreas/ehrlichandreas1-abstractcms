@@ -94,18 +94,16 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
         $this->db = $options['db'];
         
         $this->options = $options;
+        
+        $install = false;
+        
+        $install = $install || (isset($options['install']) && $options['install']);
+        
+        $install = $install || (isset($options['dbconfig']['install']) && $options['dbconfig']['install']);
+        
+        $install = $install || (isset($options['params']['install']) && $options['params']['install']);
 
-        if (isset($options['install']) && $options['install'])
-        {
-            $this->install();
-        }
-
-        if (isset($options['dbconfig']['install']) && $options['dbconfig']['install'])
-        {
-            $this->install();
-        }
-
-        if (isset($options['params']['install']) && $options['params']['install'])
+        if ($install)
         {
             $this->install();
         }
@@ -221,7 +219,7 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function setTablePrefixLength ($key = null, $value = null)
     {
-        $keyConfig = 'dbtableprefix';
+        $keyConfig = 'dbtableprefixlength';
 
         $this->setTableConfig ($keyConfig, $key, $value);
     }
@@ -233,25 +231,28 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function getTablePrefixLengthMax ($key = null)
     {
-        $key2 = 'dbtableprefixlengthmax';
+        $keyConfig = 'dbtableprefixlengthmax';
 
-        if (is_array($this->options) && array_key_exists($key2, $this->options))
+        $value = $this->getTableConfig ($keyConfig, $key);
+        
+        if ($value === false)
         {
-            if (null === $key)
-            {
-                return $this->options[$key2];
-            }
-            elseif (is_array($this->options[$key2]) && array_key_exists($key, $this->options[$key2]))
-            {
-                return $this->options[$key2][$key];
-            }
-            elseif (! is_array($this->options[$key2]))
-            {
-                return $this->options[$key2];
-            }
+            return $this->getTablePrefixLength($key);
         }
+        
+        return $value;
+    }
 
-        return $this->getTablePrefixLength($key);
+    /**
+     *
+     * @param string $key
+     * @param string $value
+     */
+    public function setTablePrefixLengthMax ($key = null, $value = null)
+    {
+        $keyConfig = 'dbtableprefixlengthmax';
+
+        $this->setTableConfig ($keyConfig, $key, $value);
     }
 
     /**
@@ -261,25 +262,28 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function getTablePrefixOffset ($key = null)
     {
-        $key2 = 'dbtableprefixoffset';
+        $keyConfig = 'dbtableprefixoffset';
 
-        if (is_array($this->options) && array_key_exists($key2, $this->options))
+        $value = $this->getTableConfig ($keyConfig, $key);
+        
+        if ($value === false)
         {
-            if (null === $key)
-            {
-                return $this->options[$key2];
-            }
-            elseif (is_array($this->options[$key2]) && array_key_exists($key, $this->options[$key2]))
-            {
-                return $this->options[$key2][$key];
-            }
-            elseif (! is_array($this->options[$key2]))
-            {
-                return $this->options[$key2];
-            }
+            return 0;
         }
+        
+        return $value;
+    }
 
-        return 0;
+    /**
+     *
+     * @param string $key
+     * @param string $value
+     */
+    public function setTablePrefixOffset ($key = null, $value = null)
+    {
+        $keyConfig = 'dbtableprefixoffset';
+
+        $this->setTableConfig ($keyConfig, $key, $value);
     }
 
     /**
@@ -320,25 +324,28 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function getTableSuffixLength ($key = null)
     {
-        $key2 = 'dbtablesuffixlength';
+        $keyConfig = 'dbtablesuffixlength';
 
-        if (is_array($this->options) && array_key_exists($key2, $this->options))
+        $value = $this->getTableConfig ($keyConfig, $key);
+        
+        if ($value === false)
         {
-            if (null === $key)
-            {
-                return $this->options[$key2];
-            }
-            elseif (is_array($this->options[$key2]) && array_key_exists($key, $this->options[$key2]))
-            {
-                return $this->options[$key2][$key];
-            }
-            elseif (! is_array($this->options[$key2]))
-            {
-                return $this->options[$key2];
-            }
+            return 0;
         }
+        
+        return $value;
+    }
 
-        return 0;
+    /**
+     *
+     * @param string $key
+     * @param string $value
+     */
+    public function setTableSuffixLength ($key = null, $value = null)
+    {
+        $keyConfig = 'dbtablesuffixlength';
+
+        $this->setTableConfig ($keyConfig, $key, $value);
     }
 
     /**
@@ -348,25 +355,28 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function getTableSuffixLengthMax ($key = null)
     {
-        $key2 = 'dbtablesuffixlengthmax';
+        $keyConfig = 'dbtablesuffixlengthmax';
 
-        if (is_array($this->options) && array_key_exists($key2, $this->options))
+        $value = $this->getTableConfig ($keyConfig, $key);
+        
+        if ($value === false)
         {
-            if (null === $key)
-            {
-                return $this->options[$key2];
-            }
-            elseif (is_array($this->options[$key2]) && array_key_exists($key, $this->options[$key2]))
-            {
-                return $this->options[$key2][$key];
-            }
-            elseif (! is_array($this->options[$key2]))
-            {
-                return $this->options[$key2];
-            }
+            return $this->getTableSuffixLength($key);
         }
+        
+        return $value;
+    }
 
-        return $this->getTableSuffixLength($key);
+    /**
+     *
+     * @param string $key
+     * @param string $value
+     */
+    public function setTableSuffixLengthMax ($key = null, $value = null)
+    {
+        $keyConfig = 'dbtablesuffixlengthmax';
+
+        $this->setTableConfig ($keyConfig, $key, $value);
     }
 
     /**
@@ -376,25 +386,28 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function getTableSuffixOffset ($key = null)
     {
-        $key2 = 'dbtablesuffixoffset';
+        $keyConfig = 'dbtablesuffixoffset';
 
-        if (is_array($this->options) && array_key_exists($key2, $this->options))
+        $value = $this->getTableConfig ($keyConfig, $key);
+        
+        if ($value === false)
         {
-            if (null === $key)
-            {
-                return $this->options[$key2];
-            }
-            elseif (is_array($this->options[$key2]) && array_key_exists($key, $this->options[$key2]))
-            {
-                return $this->options[$key2][$key];
-            }
-            elseif (! is_array($this->options[$key2]))
-            {
-                return $this->options[$key2];
-            }
+            return 0;
         }
+        
+        return $value;
+    }
 
-        return 0;
+    /**
+     *
+     * @param string $key
+     * @param string $value
+     */
+    public function setTableSuffixOffset ($key = null, $value = null)
+    {
+        $keyConfig = 'dbtablesuffixoffset';
+
+        $this->setTableConfig ($keyConfig, $key, $value);
     }
 
     /**
