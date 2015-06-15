@@ -427,23 +427,23 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function getTableName ($table = '', $position = 0)
     {
-        static $names = array();
+        /*static*/ $names = array();
 
-        static $_prefix = array();
+        /*static*/ $_prefix = array();
         
-        static $_prefixLength = array();
+        /*static*/ $_prefixLength = array();
         
-        static $_prefixLengthMax = array();
+        /*static*/ $_prefixLengthMax = array();
         
-        static $_prefixOffset = array();
+        /*static*/ $_prefixOffset = array();
         
-        static $_suffix = array();
+        /*static*/ $_suffix = array();
         
-        static $_suffixLength = array();
+        /*static*/ $_suffixLength = array();
         
-        static $_suffixLengthMax = array();
+        /*static*/ $_suffixLengthMax = array();
         
-        static $_suffixOffset = array();
+        /*static*/ $_suffixOffset = array();
 
         if ($position < 0)
         {
@@ -682,23 +682,23 @@ class EhrlichAndreas_AbstractCms_Abstract_Adapter_Abstract
      */
     public function getTableNameMd5 ($table = '', $key = '')
     {
-        static $names = array();
+        /*static*/ $names = array();
 
-        static $_prefix = array();
+        /*static*/ $_prefix = array();
         
-        static $_prefixLength = array();
+        /*static*/ $_prefixLength = array();
         
-        static $_prefixLengthMax = array();
+        /*static*/ $_prefixLengthMax = array();
         
-        static $_prefixOffset = array();
+        /*static*/ $_prefixOffset = array();
         
-        static $_suffix = array();
+        /*static*/ $_suffix = array();
         
-        static $_suffixLength = array();
+        /*static*/ $_suffixLength = array();
         
-        static $_suffixLengthMax = array();
+        /*static*/ $_suffixLengthMax = array();
         
-        static $_suffixOffset = array();
+        /*static*/ $_suffixOffset = array();
 
         if (! array_key_exists($table, $_prefix))
         {
